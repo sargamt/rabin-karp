@@ -11,7 +11,7 @@ def rabin_karp(pattern, text):
     num = 0
     hpattern = hash_function(pattern)
     # print("hpattern: ", hpattern)
-    h_old = hash_function(text[0:(len(pattern))]) #length of ascii hash   
+    h_old = hash_function(text[0:(len(pattern))]) # length of ascii hash   
     if h_old == hpattern and pattern == text[i:i+3]:
         num += 1
     for i in range(1, len(text)-len(pattern)+1):
@@ -25,16 +25,29 @@ def rabin_karp(pattern, text):
     print("CPU Time:", cpu_time, "seconds")
     return num
 
-print("Occurrences:", rabin_karp("CCB", "cjoisdCCBiodjCCB"))
+# print("Occurrences:", rabin_karp("XYZ", "cjoisdCCBiodjCCB"))
 
-# print(hash_function("cjo"))
-# print(hash_function("joi"))
-# print(hash_function("dCC"))
+x = ""
+with open("input.txt", "r") as file:
+    lines = file.readlines()
+    x = lines[0].strip()
 
+y = ""
+with open("input2.txt", "r") as file:
+    lines = file.readlines()
+    y = lines[0].strip()
 
-# cjoisdCCBiodjCCB
-# 0123456789012345
-     
-#aaabbb
-#123456
-# ...
+z = ""
+with open("input3.txt", "r") as file:
+    lines = file.readlines()
+    z = lines[0].strip()
+
+a = ""
+with open("input4.txt", "r") as file:
+    lines = file.readlines()
+    a = lines[0].strip()
+
+print("Occurrences:", rabin_karp("XYZ", x)) # 90k characters
+print("Occurrences:", rabin_karp("XYZ", y)) # 180k characters
+print("Occurrences:", rabin_karp("XYZ", z)) # 270k characters
+print("Occurrences:", rabin_karp("XYZ", a)) # 360k characters
