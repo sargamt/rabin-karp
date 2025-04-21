@@ -22,32 +22,25 @@ def rabin_karp(pattern, text):
             num += 1
     end_time = time.process_time()
     cpu_time = end_time-start_time
-    print("CPU Time:", cpu_time, "seconds")
-    return num
+    # print("CPU Time:", cpu_time, "seconds")
+    return num, cpu_time
 
 # print("Occurrences:", rabin_karp("XYZ", "cjoisdCCBiodjCCB"))
 
-x = ""
-with open("inputs/input.txt", "r") as file:
-    lines = file.readlines()
-    x = lines[0].strip()
+s1 = 'abc' * 30000
+s2 = 'abc' * 60000
+s3 = 'abc' * 90000
+s4 = 'abc' * 120000
+s5 = 'abc' * 150000
+s6 = 'abc' * 180000
+s7 = 'abc' * 210000
+s8 = 'abc' * 240000
 
-y = ""
-with open("inputs/input2.txt", "r") as file:
-    lines = file.readlines()
-    y = lines[0].strip()
-
-z = ""
-with open("inputs/input3.txt", "r") as file:
-    lines = file.readlines()
-    z = lines[0].strip()
-
-a = ""
-with open("inputs/input4.txt", "r") as file:
-    lines = file.readlines()
-    a = lines[0].strip()
-
-print("Occurrences:", rabin_karp("XYZ", x)) # 90k characters
-print("Occurrences:", rabin_karp("XYZ", y)) # 180k characters
-print("Occurrences:", rabin_karp("XYZ", z)) # 270k characters
-print("Occurrences:", rabin_karp("XYZ", a)) # 360k characters
+print("String Length (characters):", len(s1), "     CPU Time:", rabin_karp("XYZ", s1)[1]) # 90k characters
+print("String Length (characters):", len(s2), "     CPU Time:", rabin_karp("XYZ", s2)[1]) # 180k characters
+print("String Length (characters):", len(s3), "     CPU Time:", rabin_karp("XYZ", s3)[1]) # 270k characters
+print("String Length (characters):", len(s4), "     CPU Time:", rabin_karp("XYZ", s4)[1]) # 360k characters
+print("String Length (characters):", len(s5), "     CPU Time:", rabin_karp("XYZ", s5)[1]) # 450k characters
+print("String Length (characters):", len(s6), "     CPU Time:", rabin_karp("XYZ", s6)[1]) # 540k characters
+print("String Length (characters):", len(s7), "     CPU Time:", rabin_karp("XYZ", s7)[1]) # 630k characters
+print("String Length (characters):", len(s8), "     CPU Time:", rabin_karp("XYZ", s8)[1]) # 720k characters
