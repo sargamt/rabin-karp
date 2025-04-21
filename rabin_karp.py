@@ -28,22 +28,22 @@ def rabin_karp(pattern, text):
 # print("Occurrences:", rabin_karp("XYZ", "cjoisdCCBiodjCCB"))
 
 x = ""
-with open("input.txt", "r") as file:
+with open("inputs/input.txt", "r") as file:
     lines = file.readlines()
     x = lines[0].strip()
 
 y = ""
-with open("input2.txt", "r") as file:
+with open("inputs/input2.txt", "r") as file:
     lines = file.readlines()
     y = lines[0].strip()
 
 z = ""
-with open("input3.txt", "r") as file:
+with open("inputs/input3.txt", "r") as file:
     lines = file.readlines()
     z = lines[0].strip()
 
 a = ""
-with open("input4.txt", "r") as file:
+with open("inputs/input4.txt", "r") as file:
     lines = file.readlines()
     a = lines[0].strip()
 
