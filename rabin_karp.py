@@ -1,4 +1,5 @@
 import time
+import tracemalloc
 def hash_function(pattern):
     h = 0
     for i in range(len(pattern)):
@@ -44,3 +45,28 @@ print("String Length (characters):", len(s5), "     CPU Time:", rabin_karp("XYZ"
 print("String Length (characters):", len(s6), "     CPU Time:", rabin_karp("XYZ", s6)[1]) # 540k characters
 print("String Length (characters):", len(s7), "     CPU Time:", rabin_karp("XYZ", s7)[1]) # 630k characters
 print("String Length (characters):", len(s8), "     CPU Time:", rabin_karp("XYZ", s8)[1]) # 720k characters
+
+tracemalloc.start()
+rabin_karp("1234567890", s1)
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
+
+tracemalloc.start()
+rabin_karp("12345678901234567890", s1)
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
+
+tracemalloc.start()
+rabin_karp("123456789012345678901234567890", s1)
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
+
+tracemalloc.start()
+rabin_karp("1234567890123456789012345678901234567890", s1)
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
+
+tracemalloc.start()
+rabin_karp("12345678901234567890123456789012345678901234567890", s1)
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
